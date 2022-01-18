@@ -24,6 +24,16 @@ void readLevelsFromTxt(vector<vector<char>>& sudokoLevels, ifstream& sudokoLevel
 	sudokoLevelsFromTxt.close();
 }
 
+void specificLevelSolved(vector<vector<char>>& sudokoLevels, vector<vector<char>>& sudokoSolved, int level) {
+	int startOfLevel = (level - 1) * 18;
+	for (int i = 0; i < 9; i++) {
+		sudokoSolved.push_back(vector<char>());
+		for (int j = 0; j < 10; j++) {
+			sudokoSolved[i].push_back(sudokoLevels[startOfLevel][j]);
+		}
+		startOfLevel++;
+	}
+}
 
 
 int main() {
@@ -61,6 +71,7 @@ int main() {
 	}
 
 	readLevelsFromTxt(sudokoLevels, sudokoLevelsFromTxt);
+	specificLevelSolved(sudokoLevels, sudokoSolved, level);
 	
 	return 0;
 }
