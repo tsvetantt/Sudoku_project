@@ -35,6 +35,18 @@ void specificLevelSolved(vector<vector<char>>& sudokoLevels, vector<vector<char>
 	}
 }
 
+vector<vector<char>> specificLevelUnsolved(vector<vector<char>>& sudokoLevels, vector<vector<char>>& sudokoUnsolved, int level) {
+	int startOfLevel = ((level - 1) * 18) + 9;
+	for (int i = 0; i < 9; i++) {
+		sudokoUnsolved.push_back(vector<char>());
+		for (int j = 0; j < 10; j++) {
+			sudokoUnsolved[i].push_back(sudokoLevels[startOfLevel][j]);
+		}
+		startOfLevel++;
+	}
+	return sudokoUnsolved;
+}
+
 
 int main() {
 	int randomSudokoLevel = levelGenerator();
@@ -72,6 +84,8 @@ int main() {
 
 	readLevelsFromTxt(sudokoLevels, sudokoLevelsFromTxt);
 	specificLevelSolved(sudokoLevels, sudokoSolved, level);
-	
+	specificLevelUnsolved(sudokoLevels, sudokoUnsolved, level);
+	specificLevelUnsolved(sudokoLevels, sudokoUnsolvedCheck, level);
+
 	return 0;
 }
