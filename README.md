@@ -1,5 +1,5 @@
-# Sudoku_project_6
-Sudoku_project_6
+# Sudoku_project
+Sudoku project for "Introducing to programing practicum" course in my first semester in FMI.
  In this project you would be able to play sudoku in 3 difficulties. In the start you have the option to select the difficulty you want to play. After that you a random level we be generated for you. In total there are 5 levels from each difficilty.
  
  Instructions :
